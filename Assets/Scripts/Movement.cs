@@ -27,11 +27,11 @@ public class Movement : MonoBehaviour
     void Update()
     {
 
-        outputText.text = string.Format("Distance: {0:f3}" +
-            "\nx speed: {1:f3}" +
-            "\ny speed: {2:f3}" +
-            "\nSpeed: {3:f3}" +
-            "\nTime: {4:f3}" +
+        outputText.text = string.Format("Путь: {0:f3}" +
+            "\nx скорость: {1:f3}" +
+            "\ny скорость: {2:f3}" +    
+            "\nРез. скорость: {3:f3}" +
+            "\nВремя: {4:f3}" +
             "\nx: {5:f3}" +
             "\ny: {6:f3}" ,
             distance, speedX, speedZ, result_Speed, TimePassed, transform.position.x, transform.position.z);

@@ -8,8 +8,9 @@ public class Punch2 : MonoBehaviour
     public TMP_InputField massInput;
     public TMP_InputField speedInput;
     public TMP_InputField angleInput;
+    public Material _material;
 
-    
+    private Renderer _renderer;
     private bool isFinished;
     private Rigidbody rb;
     private PolygonManager _MapGenerator;
@@ -45,10 +46,8 @@ public class Punch2 : MonoBehaviour
     {
         if (finish.transform.tag == "Finish" && !isFinished)
         {
-            isFinished = true;
-            
-            Renderer _renderer = finish.GetComponent<Renderer>();
-            _renderer.material.color = Color.blue;
+            _renderer = finish.GetComponent<Renderer>();
+            _renderer.material = _material;
         }
     } 
     private void setDefault()

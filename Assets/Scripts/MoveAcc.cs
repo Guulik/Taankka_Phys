@@ -30,18 +30,18 @@ public class MoveAcc : MonoBehaviour
     }
     private string setOutputText()
     {
-        return           
-                          $"\nSpeed X:\n {_speedX:f3}" + $"\nSpeed Z:\n {_speedZ:f3}" + $"\nresSpeed:\n {_resultSpeed:f3}" + 
-                          $"\nAcceleration X:\n {accelerationX:f3}" + $"\nAcceleration Z:\n {accelerationZ:f3}" + 
-                          $"\nresAcceleration:\n {_resultAcceleration:f3}"+
-                          $"\nTime: {_timePassed:f3}" + 
+        return            
+                          $"\nСкорость X:\n {_speedX:f3}" + $"\nСкорость Y:\n {_speedZ:f3}" + $"\nРезультирующая скорость:\n {_resultSpeed:f3}" + 
+                          $"\nУскорение X:\n {accelerationX:f3}" + $"\nУскорение Y:\n {accelerationZ:f3}" + 
+                          $"\nРезультирующее ускорение:\n {_resultAcceleration:f3}"+
+                          $"\nВремя: {_timePassed:f3}" + 
                           $"\nx:\n {transform.position.x:f3}" + $"\nz:\n {transform.position.z:f3}";
     }
     
     private void Update()
     {
-        if(!_isOutputed)outputText.text = "Outputs at t3\n \n \n"+
-                          $"current time: {_timePassed:f3}";
+        if(!_isOutputed)outputText.text = "Вывод в t3\n \n \n"+
+                          $"Прошедшее время: {_timePassed:f3}";
     }
     
     public void ReadInputs()
@@ -67,11 +67,13 @@ public class MoveAcc : MonoBehaviour
             outputText.text = setOutputText();
             _isOutputed = true;
             _speedOutputs = outputText.text;
+            outputText.text = $"Дистанция:\n {_distance:f3}" + setOutputText();
+            
         }
 
         if (Math.Abs(_timePassed - t2) < Time.fixedDeltaTime / 2)
         {
-            outputText.text = $"Distance: {_distance:f3}" + _speedOutputs; 
+            outputText.text = $"Дистанция: {_distance:f3}" + _speedOutputs; 
             Time.timeScale = 0f;
         }
 
